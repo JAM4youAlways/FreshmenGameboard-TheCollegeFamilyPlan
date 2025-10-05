@@ -1,66 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Freshmen Gameboard</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app">
-    <header>
-      <h1>Freshmen Gameboard</h1>
-    </header>
+  <!-- ============================= -->
+  <!--  STUDENT LOGIN SECTION       -->
+  <!-- ============================= -->
+  <section id="login-section" class="centered">
+    <h2>Student Login</h2>
+    <div class="login-box">
+      <input id="studentName" type="text" placeholder="Enter Your Name" />
+      <input id="loginCode" type="text" placeholder="Enter Login Code" />
+      <button id="loginBtn">Login</button>
+    </div>
+  </section>
 
-    <main>
-      <!-- Login Section -->
-      <section id="login-section">
-        <div class="card">
-          <h2>Student Login</h2>
-          <label>
-            Name
-            <input id="studentName" type="text" placeholder="First Last" />
-          </label>
-          <label>
-            Login Code
-            <input id="loginCode" type="text" placeholder="e.g., EM123" />
-          </label>
-          <button id="loginBtn">Log In</button>
-          <p class="hint">Provided by your counselor</p>
-        </div>
-      </section>
+  <!-- ============================= -->
+  <!--  GAMEBOARD SECTION (Hidden)  -->
+  <!-- ============================= -->
+  <section id="board-section" class="hidden">
+    <div class="board-header">
+      <h2 id="welcome"></h2>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
 
-      <!-- Gameboard Section (hidden until login) -->
-      <section id="board-section" class="hidden">
-        <div class="board-header">
-          <div>
-            <h2 id="welcome"></h2>
-            <p class="sub">Click a locked tile to enter your unlock code.</p>
-          </div>
-          <div>
-            <button id="logoutBtn" class="ghost">Log Out</button>
-          </div>
-        </div>
+    <!-- =========================== -->
+    <!--   TILE GRID                 -->
+    <!-- =========================== -->
+    <div id="tiles" class="tiles-grid"></div>
+  </section>
 
-        <div id="tiles" class="grid"></div>
-      </section>
-    </main>
-  </div>
-
-  <!-- Unlock Modal (hidden until tile clicked) -->
-  <div id="modal" class="modal hidden">
+  <!-- ============================= -->
+  <!--  UNLOCK CODE MODAL (Hidden)  -->
+  <!-- ============================= -->
+  <div id="modal" class="hidden modal-overlay">
     <div class="modal-content">
-      <h3 id="modalTitle">Enter Unlock Code</h3>
-      <input id="unlockInput" type="text" placeholder="Enter code" />
-      <div class="row">
-        <button id="cancelBtn" class="ghost">Cancel</button>
-        <button id="submitCodeBtn">Unlock</button>
+      <h3 id="modalTitle"></h3>
+      <input id="unlockInput" type="text" placeholder="Enter Unlock Code" />
+      <p id="modalMsg" class="modal-message"></p>
+      <div class="modal-buttons">
+        <button id="submitCodeBtn" class="btn-primary">Submit</button>
+        <button id="cancelBtn" class="btn-secondary">Cancel</button>
       </div>
-      <p id="modalMsg" class="msg"></p>
     </div>
   </div>
 
-  <script src="./config.js"></script>
-  <script src="./app.js"></script>
+  <!-- ============================= -->
+  <!--  SCRIPTS                     -->
+  <!-- ============================= -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freshmen Gameboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Freshmen Gameboard</h1>
+    </header>
+
+    <main>
+      <section id="login-section">
+        <div class="card">
+          <h2>Student Login</h2>
+          <label>
+            Name
+            <input id="studentName" type="text" placeholder="First Last" />
+          </label>
+          <label>
+            Login Code
+            <input id="loginCode" type="text" placeholder="e.g., EM123" />
+          </label>
+          <button id="loginBtn">Log In</button>
+          <p class="hint">Provided by your counselor</p>
+        </div>
+      </section>
+
+      <section id="board-section" class="hidden">
+        <div class="board-header">
+          <div>
+            <h2 id="welcome"></h2>
+            <p class="sub">Click a locked tile to enter your unlock code.</p>
+          </div>
+          <div>
+            <button id="logoutBtn" class="ghost">Log Out</button>
+          </div>
+        </div>
+
+        <div id="tiles" class="grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modalTitle">Enter Unlock Code</h3>
+      <input id="unlockInput" type="text" placeholder="Enter code" />
+      <div class="row">
+        <button id="cancelBtn" class="ghost">Cancel</button>
+        <button id="submitCodeBtn">Unlock</button>
+      </div>
+      <p id="modalMsg" class="msg"></p>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
